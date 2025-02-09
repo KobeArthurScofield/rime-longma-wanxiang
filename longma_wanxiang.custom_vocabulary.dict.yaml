@@ -1,0 +1,43 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# Longma Wanxiang - 龙码万象
+#
+# * 2025-02-09  Kobe Arthur Scofield
+#
+# referenced works:
+# 《诗经・国风・邶・击鼓》
+#
+# license:
+# creative commons attribution-share alike 4.0
+# http://creativecommons.org/licenses/by-sa/4.0/
+#
+
+---
+name: longma_wanxiang.custom_vocabulary
+version: "2025.02.09"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# Example vocabularies
+击鼓其镗
+踊跃用兵
+土国城漕
+我独南行
+从孙子仲
+平陈与宋
+不我以归
+忧心有忡
+爰居爰处
+爰丧其马
+于以求之
+于林之下
+死生契阔
+与子成说
+执子之手
+与子偕老
+于嗟阔兮
+不我活兮
+于嗟洵兮
+不我信兮

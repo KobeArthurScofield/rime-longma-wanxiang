@@ -1,0 +1,12 @@
+# encoding: utf-8
+---
+recipe:
+  Rx: rime-longma-wanxiang
+  description: >-
+    龙码万象
+
+install_files: >-
+  longma_wanxiang.custom_*.dict.yaml
+  longma_wanxiang.custom_pharse.yaml
+  longma_wanxiang.share.yaml
+  longma_wanxiang.*.schema.yaml

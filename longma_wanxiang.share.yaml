@@ -1,0 +1,301 @@
+# Rime schema
+# encoding: utf-8
+
+switches:
+  - name: ascii_mode
+    states: ['中', '英']
+  - name: full_shape
+    states: ['半角', '全角']
+  - name: ascii_punct
+    states: ['。，', '. , ']
+  - options:
+      - zh_simp
+      - zh_trad
+      - zh_cn
+      - zh_tw
+      - zh_hk
+    states:
+      - 汉 简体
+      - 漢 繁體
+      - 中 中国
+      - 中 台灣
+      - 中 香港澳門
+
+engines:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - affix_segmentor@stroke
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator
+    - punct_translator
+    - table_translator@custom_phrase
+    - script_translator
+    - table_translator@stroke
+  filters:
+    - simplifier@zh_simp
+    - simplifier@zh_trad
+    - simplifier@zh_cn
+    - simplifier@zh_tw
+    - simplifier@zh_hk
+    - uniquifier
+    - reverse_lookup_filter@longma_reverse_lookup
+
+translator:
+  enable_sentence: true
+  enable_user_dict: true
+  dictionary: wanxiang
+  packs:
+    - longma_wanxiang.custom_vocabulary
+  prism: longma_wanxiang
+  db_class: userdb
+  spelling_hints: 8
+  always_show_comments: true
+  contextual_suggestions: false
+  max_homophones: 5
+  max_homographs: 5
+
+speller:
+  alphabet: qwertyuiopasdfghjklzxcvbnm
+  delimiter: " ';"
+  auto_select: false
+  use_space: false
+  algebra:
+    __include: /algebra/main
+
+custom_phrase:
+  dictionary: ""
+  user_dict: longma_wanxiang.custom_phrase
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+
+grammar:
+  language: wanxiang-lts-zh-hans
+  collocation_max_length: 8
+  collocation_min_length: 3
+  collocation_penalty: -10
+  non_collocation_penalty: -12
+  weak_collocation_penalty: -24
+  rear_penalty: -30
+
+trad_simp_convert:
+  zh_simp:
+    option_name: zh_simp
+    opencc_config: t2s.json
+    tips: all
+  zh_cn:
+    option_name: zh_cn
+    opencc_config: t2s.json
+    tips: all
+  zh_trad:
+    option_name: zh_trad
+    opencc_config: s2t.json
+    tips: all
+  zh_tw:
+    option_name: zh_tw
+    opencc_config: s2twp.json
+    tips: all
+  zh_hk:
+    option_name: zh_hk
+    opencc_config: s2hk.json
+    tips: all
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    stroke: "^`[hspnz]*;?$"
+
+reverse_library:
+  stroke:
+    tag: stroke
+    dictionary: stroke
+    prefix: "`"
+    suffix: ";"
+    tips: 〔笔画〕
+    preedit_format:
+      - xlit/hspnz/一丨丿丶乙/
+
+longma_reverse_lookup:
+  tags: [ stroke ]
+  overwrite_comment: false
+  dictionary: wanxiang
+
+menu:
+  page_size: 9
+
+algebra:
+  main:
+    # Pre-process for zero-consonant
+    - xform/^([aāáǎà])$/a$1/
+    - xform/^([oōóǒò])$/o$1/
+    - xform/^([eēéěè])$/e$1/
+    - xform/^([aāáǎà])([ion])$/a$1$2/
+    - xform/^([oōóǒò])([u])$/o$1$2/
+    - xform/^([eēéěè])([inr])$/e$1$2/
+    - xform/^([aāáǎà])ng$/a$1ng/
+    - xform/^([oōóǒò])ng$/o$1ng/
+    - xform/^([eēéěè])ng$/e$1ng/
+    # Pre-process for consonant-only
+    - xform/^([mḿm̀])$/m$1/
+    - xform/^([nńňǹ])(g)?$/n$1$2/
+    # Part 1 for initials
+    - xform/^sh/T/
+    - xform/^ch/S/
+    - xform/^zh/K/
+    - xform/^a/Q/
+    - xform/^p/W/
+    - xform/^j/E/
+    - xform/^o/R/
+    - xform/^n/Y/
+    - xform/^k/U/
+    - xform/^b/I/
+    - xform/^t/O/
+    - xform/^m/P/
+    - xform/^q/A/
+    - xform/^l/D/
+    - xform/^r/F/
+    - xform/^w/G/
+    - xform/^d/H/
+    - xform/^y/J/
+    - xform/^g/L/
+    - xform/^s/Z/
+    - xform/^c/X/
+    - xform/^x/C/
+    - xform/^f/V/
+    - xform/^e/B/
+    - xform/^z/N/
+    - xform/^h/M/
+    # Part 2 for compounded-finals
+    - xform/iǎn$|iáng$|uá$/Q/
+    - xform/iàng$/W/
+    - xform/uǎng$/E/
+    - xform/iòng$/T/
+    - xform/ià$/Y/
+    - xform/iàn$/U/
+    - xform/[uü]án$/I/
+    - xform/i[aā]$|iáo$|uài$/O/
+    - xform/iào$|uǒ$/P/
+    - xform/iǎ$|u[aā]ng$/A/
+    - xform/i[oō]ng$|u[oōó]$/S/
+    - xform/iá$|i[aā]o$/D/
+    - xform/u[ǎà]$|[uü][aā]n$/F/
+    - xform/uáng$/G/
+    - xform/u[aā]i$/H/
+    - xform/uǎi$/J/
+    - xform/iǎo$|u[aā]$/Z/
+    - xform/i[aā]n$|uò$/X/
+    - xform/[uü]àn$/C/
+    - xform/i[óǒ]ng$|uái$/V/
+    - xform/ián$|[uü]ǎn$|uàng$/B/
+    - xform/iǎng$/N/
+    - xform/i[aā]ng$/M/
+    # Part 3 for finals that looks like compounded
+    - xform/ào$|iě$/W/
+    - xform/iù$|uì$/E/
+    - xform/ǎi$|áo$/R/
+    - xform/ǎo$|ó$/T/
+    - xform/iú$|[uü][eē]$/Y/
+    - xform/[aā]o$/U/
+    - xform/[uü]é$/I/
+    - xform/èr$|i[uū]$|[uü]è$/O/
+    - xform/ěr$|iè$/P/
+    - xform/[aā]i$|[eē]r$/A/
+    - xform/èi$|ǒu$/D/
+    - xform/ěi$/G/
+    - xform/éi$|i[eē]$/H/
+    - xform/ái$|ér$/J/
+    - xform/ié$|òu$/K/
+    - xform/u[iī]$/L/
+    - xform/iǔ$|uǐ$/Z/
+    - xform/[eē]i$|[oō]u$/X/
+    - xform/ài$|[uü]ě$|uí$/B/
+    # Part 4 for compounded finals with consonants
+    - xform/án$|[eē]n$|[ǐǒ]ng$/Q/
+    - xform/èng?$/W/
+    - xform/ìn$/R/
+    - xform/[aā]ng$|én$|ǐn$/Y/
+    - xform/àng$/U/
+    - xform/[aā]n$|éng$/O/
+    - xform/ǎng$/P/
+    - xform/ìng$|óng$/A/
+    - xform/àn$|ín$|[uūüǖ]n$/S/
+    - xform/ěn$/G/
+    - xform/[eē]ng$|[úǘ]n$/H/
+    - xform/[iī]ng$/J/
+    - xform/íng$/K/
+    - xform/áng$|òng$/Z/
+    - xform/[ùǜ]n$/X/
+    - xform/[iī]n$|[oō]ng$/V/
+    - xform/ǎn$/N/
+    - xform/ěng$|[ǔǚ]n$/M/
+    # Part 5 for single finals and single consonants
+    - xform/ó$/Q/
+    - xform/[aāüǖ]$/E/
+    - xform/à$|[ěè]$/R/
+    - xform/[oō]$/T/
+    - xform/[nńňǹ]g?$/Y/
+    - xform/ù$/I/
+    - xform/[mḿm̀]$/P/
+    - xform/á$/A/
+    - xform/ǚ$/S/
+    - xform/é$/D/
+    - xform/ǐ$|ò$|r$/F/
+    - xform/[iī]$/G/
+    - xform/ǜ$/H/
+    - xform/ǒ$|[uū]$/J/
+    - xform/[eē]$/K/
+    - xform/ì$/L/
+    - xform/ǔ$/C/
+    - xform/ǎ$/V/
+    - xform/ǘ$/B/
+    - xform/í$/N/
+    - xform/ú$/M/
+    # Code converter
+    - xlit/QWERTYUIOPASDFGHJKLZXCVBNM/qwertyuiopasdfghjklzxcvbnm/
+
+# The main list of algebra
+#   - xform/^a|án$|ēn$|en$|iǎn$|iáng$|ǐng$|ó$|ǒng$|uá$/Q/
+#   - xform/^p|ào$|èn$|èng$|iàng$|iě$/W/
+#   - xform/^j|ā$|a$|iù$|uǎng$|uì$|ǖ$|ü$/E/
+#   - xform/^o|à$|ǎi$|áo$|ě$|è$|in4$/R/
+#   - xform/^sh|ǎo$|iòng$|ō$|o$|óu$/T/
+#   - xform/^n|āng$|ang$|én$|ià$|ǐn$|iú$|uē$|ue$|üē$|üe$/Y/
+#   - xform/^k|àng$|āo$|ao$|iàn$/U/
+#   - xform/^b|ù$|uán$|ué$|üán$|üé$/I/
+#   - xform/^t|ān$|an$|éng$|èr$|iā$|ia$|iáo$|iū$|iu$|uài$|uè$|üè$/O/
+#   - xform/^m|ǎng$|ěr$|iào$|iè$|uǒ$/P/
+#   - xform/^q|á$|āi$|ai$|ēr$|er$|iǎ$|ìng$|óng$|uāng$|uang$/A/
+#   - xform/^ch|àn$|ín$|iōng$|iong$|ūn$|un$|uō$|uó$|uo$|ǚ$|ǖn$|ün$/S/
+#   - xform/^l|é$|èi$|iá$|iāo$|iao$|ǒu$/D/
+#   - xform/^r|ǐ$|ò$|uǎ$|uà$|uān$|uan$|üān$|üan$/F/
+#   - xform/^w|ěi$|ěn$|ī$|i$|uáng$/G/
+#   - xform/^d|éi$|ēng$|eng$|iē$|ie$|uāi$|uai$|ún$|ǜ$|ǘn$/H/
+#   - xform/^y|ái$|ér$|īng$|ing$|ǒ$|ū$|u$|uǎi$/J/
+#   - xform/^zh|ē$|e$|ié$|íng$|òu$/K/
+#   - xform/^g|ì$|uī$|ui$/L/
+#   - xform/^s|áng$|iǎo$|iǔ$|òng$|uā$|ua$|uǐ$/Z/
+#   - xform/^c|ēi$|ei$|iān$|ian$|ōu$|ou$|ùn$|uò$|ǜn$/X/
+#   - xform/^x|ǔ$|uàn$|üàn$/C/
+#   - xform/^f|ǎ$|īn$|in$|ióng$|iǒng$|ōng$|ong$|uái$/V/
+#   - xform/^e|ài$|ián$|uǎn$|uàng$|uě$|uí$|ǘ$|üǎn$|üě$/B/
+#   - xform/^z|ǎn$|í$|iǎng$/N/
+#   - xform/^h|ěng$|iāng$|iang$|ú$|ǔn$|ǚn$/M/
+#   - xlit/QWERTYUIOPASDFGHJKLZXCVBNM/qwertyuiopasdfghjklzxcvbnm/

@@ -1,0 +1,23 @@
+# Rime table
+# coding: utf-8
+#@db/db_name	longma_tone.custom_phrase
+#@db/db_type	tabledb
+#
+# 龍碼方案自定義短語
+# 修改後重新部署方可生效
+#
+# ⚠ 自定義短語總是出現在主詞庫詞條之前。
+#   如果你希望添加的詞語可以參與動態調頻，請將詞添加到 moran.extended.dict.yaml 中。
+#
+# 每行格式：文字 <tab> 編碼 <tab> 權重（權重越高，順序越靠前）
+#
+# 示例：
+秩	rank	0
+大學英語考試	cet	0
+在版編目	cip	0
+傳真	fax	0
+美國國家導彈防禦系統	nmd	0
+中國中央電視臺	cctv	0
+嚴重急性呼吸綜合徵	sars	0
+有線電視	catv	0
+高級管理人員工商管理碩士	emba	0
