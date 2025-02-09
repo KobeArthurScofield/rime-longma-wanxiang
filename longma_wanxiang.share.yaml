@@ -144,18 +144,18 @@ menu:
 algebra:
   main:
     # Pre-process for zero-consonant
-    - xform/^([aāáǎà])$/a$1/
-    - xform/^([oōóǒò])$/o$1/
-    - xform/^([eēéěè])$/e$1/
-    - xform/^([aāáǎà])([ion])$/a$1$2/
-    - xform/^([oōóǒò])([u])$/o$1$2/
-    - xform/^([eēéěè])([inr])$/e$1$2/
-    - xform/^([aāáǎà])ng$/a$1ng/
-    - xform/^([oōóǒò])ng$/o$1ng/
-    - xform/^([eēéěè])ng$/e$1ng/
+    - xform/^([āáǎàa])$/a$1/
+    - xform/^([ōóǒòo])$/o$1/
+    - xform/^([ēéěèe])$/e$1/
+    - xform/^([āáǎàa])([ion])$/a$1$2/
+    - xform/^([ōóǒòo])([u])$/o$1$2/
+    - xform/^([ēéěèe])([inr])$/e$1$2/
+    - xform/^([āáǎàa])ng$/a$1ng/
+    - xform/^([ōóǒòo])ng$/o$1ng/
+    - xform/^([ēéěèe])ng$/e$1ng/
     # Pre-process for consonant-only
-    - xform/^([mḿm̀])$/m$1/
-    - xform/^([nńňǹ])(g)?$/n$1$2/
+    - xform/^([ḿm̀m])$/m$1/
+    - xform/^([ńňǹn])(g)?$/n$1$2/
     # Part 1 for initials
     - xform/^sh/T/
     - xform/^ch/S/
@@ -190,78 +190,78 @@ algebra:
     - xform/iòng$/T/
     - xform/ià$/Y/
     - xform/iàn$/U/
-    - xform/[uü]án$/I/
-    - xform/i[aā]$|iáo$|uài$/O/
+    - xform/[üu]án$/I/
+    - xform/i[āa]$|iáo$|uài$/O/
     - xform/iào$|uǒ$/P/
-    - xform/iǎ$|u[aā]ng$/A/
-    - xform/i[oō]ng$|u[oōó]$/S/
-    - xform/iá$|i[aā]o$/D/
-    - xform/u[ǎà]$|[uü][aā]n$/F/
+    - xform/iǎ$|u[āa]ng$/A/
+    - xform/i[ōo]ng$|u[ōóo]$/S/
+    - xform/iá$|i[āa]o$/D/
+    - xform/u[ǎà]$|[üu][āa]n$/F/
     - xform/uáng$/G/
-    - xform/u[aā]i$/H/
+    - xform/u[āa]i$/H/
     - xform/uǎi$/J/
-    - xform/iǎo$|u[aā]$/Z/
-    - xform/i[aā]n$|uò$/X/
-    - xform/[uü]àn$/C/
+    - xform/iǎo$|u[āa]$/Z/
+    - xform/i[āa]n$|uò$/X/
+    - xform/[üu]àn$/C/
     - xform/i[óǒ]ng$|uái$/V/
-    - xform/ián$|[uü]ǎn$|uàng$/B/
+    - xform/ián$|[üu]ǎn$|uàng$/B/
     - xform/iǎng$/N/
-    - xform/i[aā]ng$/M/
+    - xform/i[āa]ng$/M/
     # Part 3 for finals that looks like compounded
     - xform/ào$|iě$/W/
     - xform/iù$|uì$/E/
     - xform/ǎi$|áo$/R/
     - xform/ǎo$|ó$/T/
-    - xform/iú$|[uü][eē]$/Y/
-    - xform/[aā]o$/U/
-    - xform/[uü]é$/I/
-    - xform/èr$|i[uū]$|[uü]è$/O/
+    - xform/iú$|[üu][ēe]$/Y/
+    - xform/[āa]o$/U/
+    - xform/[üu]é$/I/
+    - xform/èr$|i[ūu]$|[üu]è$/O/
     - xform/ěr$|iè$/P/
-    - xform/[aā]i$|[eē]r$/A/
+    - xform/[āa]i$|[ēe]r$/A/
     - xform/èi$|ǒu$/D/
     - xform/ěi$/G/
-    - xform/éi$|i[eē]$/H/
+    - xform/éi$|i[ēe]$/H/
     - xform/ái$|ér$/J/
     - xform/ié$|òu$/K/
-    - xform/u[iī]$/L/
+    - xform/u[īi]$/L/
     - xform/iǔ$|uǐ$/Z/
-    - xform/[eē]i$|[oō]u$/X/
-    - xform/ài$|[uü]ě$|uí$/B/
+    - xform/[ēe]i$|[ōo]u$/X/
+    - xform/ài$|[üu]ě$|uí$/B/
     # Part 4 for compounded finals with consonants
-    - xform/án$|[eē]n$|[ǐǒ]ng$/Q/
+    - xform/án$|[ēe]n$|[ǐǒ]ng$/Q/
     - xform/èng?$/W/
     - xform/ìn$/R/
-    - xform/[aā]ng$|én$|ǐn$/Y/
+    - xform/[āa]ng$|én$|ǐn$/Y/
     - xform/àng$/U/
-    - xform/[aā]n$|éng$/O/
+    - xform/[āa]n$|éng$/O/
     - xform/ǎng$/P/
     - xform/ìng$|óng$/A/
-    - xform/àn$|ín$|[uūüǖ]n$/S/
+    - xform/àn$|ín$|[ǖüūu]n$/S/
     - xform/ěn$/G/
-    - xform/[eē]ng$|[úǘ]n$/H/
-    - xform/[iī]ng$/J/
+    - xform/[ēe]ng$|[ǘú]n$/H/
+    - xform/[īi]ng$/J/
     - xform/íng$/K/
     - xform/áng$|òng$/Z/
-    - xform/[ùǜ]n$/X/
-    - xform/[iī]n$|[oō]ng$/V/
+    - xform/[ǜù]n$/X/
+    - xform/[īi]n$|[ōo]ng$/V/
     - xform/ǎn$/N/
-    - xform/ěng$|[ǔǚ]n$/M/
+    - xform/ěng$|[ǚǔ]n$/M/
     # Part 5 for single finals and single consonants
     - xform/ó$/Q/
-    - xform/[aāüǖ]$/E/
+    - xform/[ǖüāa]$/E/
     - xform/à$|[ěè]$/R/
-    - xform/[oō]$/T/
-    - xform/[nńňǹ]g?$/Y/
+    - xform/[ōo]$/T/
+    - xform/[ńňǹn]g?$/Y/
     - xform/ù$/I/
-    - xform/[mḿm̀]$/P/
+    - xform/[ḿm̀m]$/P/
     - xform/á$/A/
     - xform/ǚ$/S/
     - xform/é$/D/
     - xform/ǐ$|ò$|r$/F/
-    - xform/[iī]$/G/
+    - xform/[īi]$/G/
     - xform/ǜ$/H/
-    - xform/ǒ$|[uū]$/J/
-    - xform/[eē]$/K/
+    - xform/ǒ$|[ūu]$/J/
+    - xform/[ēe]$/K/
     - xform/ì$/L/
     - xform/ǔ$/C/
     - xform/ǎ$/V/
