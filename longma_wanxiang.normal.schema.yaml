@@ -68,3 +68,6 @@ longma_reverse_lookup:
 
 menu:
   __include: longma_wanxiang.share.yaml:/menu?
+
+style:
+  __include: longma_wanxiang.share.yaml:/style?
