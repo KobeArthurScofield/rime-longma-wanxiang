@@ -150,12 +150,13 @@ algebra:
     - xform/^(ā|á|ǎ|à|a)([ion])$/a$1$2/
     - xform/^(ō|ó|ǒ|ò|o)([u])$/o$1$2/
     - xform/^(ē|é|ě|è|e)([inr])$/e$1$2/
+    - xform/^(ê̄|ế|ê̌|ề|ê)$/e$1/
     - xform/^(ā|á|ǎ|à|a)ng$/a$1ng/
     - xform/^(ō|ó|ǒ|ò|o)ng$/o$1ng/
     - xform/^(ē|é|ě|è|e)ng$/e$1ng/
     # Pre-process for consonant-only
-    - xform/^(ḿ|m̀|m)$/m$1/
-    - xform/^(ń|ň|ǹ|n)(g)?$/n$1$2/
+    - xform/^(m̄|ḿ|m̌|m̀|m)$/m$1/
+    - xform/^(n̄|ń|ň|ǹ|n)(g)?$/n$1$2/
     # Pre-process for special u/ü
     - derive/^([jqxy])u$/$1ü/
     - derive/^([jqxy])ū$/$1ǖ/
@@ -193,29 +194,29 @@ algebra:
     - xform/^(.)(án|ēn|en|iǎn|iáng|ǐng|ó|ǒng|uá)$/$1Q/
     - xform/^(.)(ào|èng?|iàng|iě)$/$1W/
     - xform/^(.)(ā|a|iù|uǎng|uì|ǖ|ü)$/$1E/
-    - xform/^(.)(à|ǎi|áo|ě|è|ìn)$/$1R/
+    - xform/^(.)(à|ǎi|áo|ě|ê̌|è|ề|ìn)$/$1R/
     - xform/^(.)(ǎo|iòng|ō|o|óu)$/$1T/
-    - xform/^(.)(āng|ang|én|ià|ǐn|iú|uē|ue|üē|üe|ńg?|ňg?|ǹg?|ng?)$/$1Y/
+    - xform/^(.)(āng|ang|én|ià|ǐn|iú|uē|ue|üē|üe|n̄|ń|ň|ǹ|n)$/$1Y/
     - xform/^(.)(àng|āo|ao|iàn)$/$1U/
     - xform/^(.)(ù|uán|ué|üán|üé)$/$1I/
     - xform/^(.)(ān|an|éng|èr|iā|ia|iáo|iū|iu|uài|uè|üè)$/$1O/
-    - xform/^(.)(ǎng|ěr|iào|iè|uǒ|ḿ|m̀|m)$/$1P/
+    - xform/^(.)(ǎng|ěr|iào|iè|uǒ|m̄|ḿ|m̌|m̀|m)$/$1P/
     - xform/^(.)(á|āi|ai|ēr|er|iǎ|ìng|óng|uāng|uang)$/$1A/
     - xform/^(.)(àn|ín|iōng|iong|ūn|un|uō|uó|uo|ǚ|ǖn|ün)$/$1S/
-    - xform/^(.)(é|èi|iá|iāo|iao|ǒu)$/$1D/
+    - xform/^(.)(é|ế|èi|iá|iāo|iao|ǒu)$/$1D/
     - xform/^(.)(ǐ|ò|uǎ|uà|uān|uan|üān|üan|r)$/$1F/
     - xform/^(.)(ěi|ěn|ī|i|uáng)$/$1G/
     - xform/^(.)(éi|ēng|eng|iē|ie|uāi|uai|ún|ǜ|ǘn)$/$1H/
     - xform/^(.)(ái|ér|īng|ing|ǒ|ū|u|uǎi)$/$1J/
-    - xform/^(.)(ē|e|ié|íng|òu)$/$1K/
-    - xform/^(.)(ì|uī|ui)$/$1L/
+    - xform/^(.)(ē|e|ê̄|ê|ié|íng|òu)$/$1K/
+    - xform/^(.)(ì|uī|ui|n̄g|ńg|ňg|ǹg|ng)$/$1L/
     - xform/^(.)(áng|iǎo|iǔ|òng|uā|ua|uǐ)$/$1Z/
     - xform/^(.)(ēi|ei|iān|ian|ōu|ou|ùn|uò|ǜn)$/$1X/
     - xform/^(.)(ǔ|uàn|üàn)$/$1C/
     - xform/^(.)(ǎ|īn|in|ióng|iǒng|ōng|ong|uái)$/$1V/
     - xform/^(.)(ài|ián|uǎn|uàng|uě|uí|ǘ|üǎn|üě)$/$1B/
     - xform/^(.)(ǎn|í|iǎng)$/$1N/
-    - xform/^(.)(ěng|iāng|iang|ú|ǔn|ǚn)$/$1M/
+    - xform/^(.)(ěng|iāng|iang|ú|ǔn|ǚn|h̄|h́|ȟ|h̀|h)$/$1M/
     # Code converter
     - xlit/QWERTYUIOPASDFGHJKLZXCVBNM/qwertyuiopasdfghjklzxcvbnm/
 
