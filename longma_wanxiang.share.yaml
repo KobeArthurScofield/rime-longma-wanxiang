@@ -183,91 +183,33 @@ algebra:
     - xform/^e/B/
     - xform/^z/N/
     - xform/^h/M/
-    # Part 2 for compounded-finals
-    - xform/iǎn$|iáng$|uá$/Q/
-    - xform/iàng$/W/
-    - xform/uǎng$/E/
-    - xform/iòng$/T/
-    - xform/ià$/Y/
-    - xform/iàn$/U/
-    - xform/üán$|uán$/I/
-    - xform/iā$|ia$|iáo$|uài$/O/
-    - xform/iào$|uǒ$/P/
-    - xform/iǎ$|uāng$|uang$/A/
-    - xform/iōng$|iong$|uō$|uó$|uo$/S/
-    - xform/iá$|iāo$|iao$/D/
-    - xform/uǎ$|uà$|üān$|üan$|uān$|uan$/F/
-    - xform/uáng$/G/
-    - xform/uāi$|uai$/H/
-    - xform/uǎi$/J/
-    - xform/iǎo$|uā$|ua$/Z/
-    - xform/iān$|ian$|uò$/X/
-    - xform/üàn$|uàn$/C/
-    - xform/ióng$|iǒng$|uái$/V/
-    - xform/ián$|üǎn$|uǎn$|uàng$/B/
-    - xform/iǎng$/N/
-    - xform/iāng$|iang$/M/
-    # Part 3 for finals that looks like compounded
-    - xform/ào$|iě$/W/
-    - xform/iù$|uì$/E/
-    - xform/ǎi$|áo$/R/
-    - xform/ǎo$|ó$/T/
-    - xform/iú$|üē$|üe$|uē$|ue$/Y/
-    - xform/āo$|ao$/U/
-    - xform/üé$|ué$/I/
-    - xform/èr$|iū$|iu$|üè$|uè$/O/
-    - xform/ěr$|iè$/P/
-    - xform/āi$|ai$|ēr$|er$/A/
-    - xform/èi$|ǒu$/D/
-    - xform/ěi$/G/
-    - xform/éi$|iē$|ie$/H/
-    - xform/ái$|ér$/J/
-    - xform/ié$|òu$/K/
-    - xform/uī$|ui$/L/
-    - xform/iǔ$|uǐ$/Z/
-    - xform/ēi$|ei$|ōu$|ou$/X/
-    - xform/ài$|üě$|uě$|uí$/B/
-    # Part 4 for compounded finals with consonants
-    - xform/án$|ēn$|en$|ǐng$|ǒng$/Q/
-    - xform/èng?$/W/
-    - xform/ìn$/R/
-    - xform/āng$|ang$|én$|ǐn$/Y/
-    - xform/àng$/U/
-    - xform/ān$|an$|éng$/O/
-    - xform/ǎng$/P/
-    - xform/ìng$|óng$/A/
-    - xform/àn$|ín$|ǖn$|ün$|ūn$|un$/S/
-    - xform/ěn$/G/
-    - xform/ēng$|eng$|ǘn$|ún$/H/
-    - xform/īng$|ing$/J/
-    - xform/íng$/K/
-    - xform/áng$|òng$/Z/
-    - xform/ǜn$|ùn$/X/
-    - xform/īn$|in$|ōng$|ong$/V/
-    - xform/ǎn$/N/
-    - xform/ěng$|ǚn$|ǔn$/M/
-    # Part 5 for single finals and single consonants
-    - xform/ó$/Q/
-    - xform/ǖ$|ü$|ā$|a$/E/
-    - xform/à$|ě$|è$/R/
-    - xform/ō$|o$/T/
-    - xform/ńg?$|ňg?$|ǹg?$|ng?$/Y/
-    - xform/ù$/I/
-    - xform/ḿ$|m̀$|m$/P/
-    - xform/á$/A/
-    - xform/ǚ$/S/
-    - xform/é$/D/
-    - xform/ǐ$|ò$|r$/F/
-    - xform/ī$|i$/G/
-    - xform/ǜ$/H/
-    - xform/ǒ$|ū$|u$/J/
-    - xform/ē$|e$/K/
-    - xform/ì$/L/
-    - xform/ǔ$/C/
-    - xform/ǎ$/V/
-    - xform/ǘ$/B/
-    - xform/í$/N/
-    - xform/ú$/M/
+    # Part 2 for finals
+    - xform/^(.)(án|ēn|en|iǎn|iáng|ǐng|ó|ǒng|uá)$/$1Q/
+    - xform/^(.)(ào|èng?|iàng|iě)$/$1W/
+    - xform/^(.)(ā|a|iù|uǎng|uì|ǖ|ü)$/$1E/
+    - xform/^(.)(à|ǎi|áo|ě|è|ìn)$/$1R/
+    - xform/^(.)(ǎo|iòng|ō|o|óu)$/$1T/
+    - xform/^(.)(āng|ang|én|ià|ǐn|iú|uē|ue|üē|üe|ńg?|ňg?|ǹg?|ng?)$/$1Y/
+    - xform/^(.)(àng|āo|ao|iàn)$/$1U/
+    - xform/^(.)(ù|uán|ué|üán|üé)$/$1I/
+    - xform/^(.)(ān|an|éng|èr|iā|ia|iáo|iū|iu|uài|uè|üè)$/$1O/
+    - xform/^(.)(ǎng|ěr|iào|iè|uǒ|ḿ|m̀|m)$/$1P/
+    - xform/^(.)(á|āi|ai|ēr|er|iǎ|ìng|óng|uāng|uang)$/$1A/
+    - xform/^(.)(àn|ín|iōng|iong|ūn|un|uō|uó|uo|ǚ|ǖn|ün)$/$1S/
+    - xform/^(.)(é|èi|iá|iāo|iao|ǒu)$/$1D/
+    - xform/^(.)(ǐ|ò|uǎ|uà|uān|uan|üān|üan|r)$/$1F/
+    - xform/^(.)(ěi|ěn|ī|i|uáng)$/$1G/
+    - xform/^(.)(éi|ēng|eng|iē|ie|uāi|uai|ún|ǜ|ǘn)$/$1H/
+    - xform/^(.)(ái|ér|īng|ing|ǒ|ū|u|uǎi)$/$1J/
+    - xform/^(.)(ē|e|ié|íng|òu)$/$1K/
+    - xform/^(.)(ì|uī|ui)$/$1L/
+    - xform/^(.)(áng|iǎo|iǔ|òng|uā|ua|uǐ)$/$1Z/
+    - xform/^(.)(ēi|ei|iān|ian|ōu|ou|ùn|uò|ǜn)$/$1X/
+    - xform/^(.)(ǔ|uàn|üàn)$/$1C/
+    - xform/^(.)(ǎ|īn|in|ióng|iǒng|ōng|ong|uái)$/$1V/
+    - xform/^(.)(ài|ián|uǎn|uàng|uě|uí|ǘ|üǎn|üě)$/$1B/
+    - xform/^(.)(ǎn|í|iǎng)$/$1N/
+    - xform/^(.)(ěng|iāng|iang|ú|ǔn|ǚn)$/$1M/
     # Code converter
     - xlit/QWERTYUIOPASDFGHJKLZXCVBNM/qwertyuiopasdfghjklzxcvbnm/
 
@@ -275,7 +217,7 @@ algebra:
 #   - xform/^a|án$|ēn$|en$|iǎn$|iáng$|ǐng$|ó$|ǒng$|uá$/Q/
 #   - xform/^p|ào$|èn$|èng$|iàng$|iě$/W/
 #   - xform/^j|ā$|a$|iù$|uǎng$|uì$|ǖ$|ü$/E/
-#   - xform/^o|à$|ǎi$|áo$|ě$|è$|in4$/R/
+#   - xform/^o|à$|ǎi$|áo$|ě$|è$|ìn$/R/
 #   - xform/^sh|ǎo$|iòng$|ō$|o$|óu$/T/
 #   - xform/^n|āng$|ang$|én$|ià$|ǐn$|iú$|uē$|ue$|üē$|üe$/Y/
 #   - xform/^k|àng$|āo$|ao$|iàn$/U/

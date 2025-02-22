@@ -11,7 +11,7 @@ schema:
     龙码万象输入法
     采用龙码方案，并使用万象原子词库及万象原子模型。
     本方案仅使用原龙码音调输入法的音码部分，形码辅助未使用。
-  version: '1.3.2.1767'
+  version: '1.3.3.1767'
   dependencies:
     - stroke
 
@@ -67,4 +67,4 @@ longma_reverse_lookup:
   __include: longma_wanxiang.share.yaml:/longma_reverse_lookup?
 
 menu:
-  __include: longma_wanxiang.share.yaml:/menu
+  __include: longma_wanxiang.share.yaml:/menu?
