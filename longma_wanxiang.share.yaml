@@ -156,6 +156,12 @@ algebra:
     # Pre-process for consonant-only
     - xform/^(ḿ|m̀|m)$/m$1/
     - xform/^(ń|ň|ǹ|n)(g)?$/n$1$2/
+    # Pre-process for special u/ü
+    - derive/^([jqxy])u$/$1ü/
+    - derive/^([jqxy])ū$/$1ǖ/
+    - derive/^([jqxy])ú$/$1ǘ/
+    - derive/^([jqxy])ǔ$/$1ǚ/
+    - derive/^([jqxy])ù$/$1ǜ/
     # Part 1 for initials
     - xform/^sh/T/
     - xform/^ch/S/
