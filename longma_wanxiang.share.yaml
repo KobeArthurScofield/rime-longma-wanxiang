@@ -138,9 +138,6 @@ longma_reverse_lookup:
   overwrite_comment: false
   dictionary: wanxiang
 
-menu:
-  page_size: 9
-
 style:
   font_point: 12
   label_font_point: 12
@@ -219,29 +216,29 @@ algebra:
     - xform/^(.)(án|ēn|en|iǎn|iáng|ǐng|ó|ǒng|uá)$/$1Q/
     - xform/^(.)(ào|èng?|iàng|iě)$/$1W/
     - xform/^(.)(ā|a|iù|uǎng|uì|ǖ|ü)$/$1E/
-    - xform/^(.)(à|ǎi|áo|ě|ê̌|è|ề|ìn)$/$1R/
-    - xform/^(.)(ǎo|iòng|ō|o|óu)$/$1T/
-    - xform/^(.)(āng|ang|én|ià|ǐn|iú|uē|ue|üē|üe|n̄|ń|ň|ǹ|n)$/$1Y/
-    - xform/^(.)(àng|āo|ao|iàn)$/$1U/
-    - xform/^(.)(ù|uán|ué|üán|üé)$/$1I/
+    - xform/^(.)(à|ǎi|áo|ě|è|ìn)$/$1R/
+    - xform/^(.)(ǎo|iòng|ō|o|óu|ň)$/$1T/
+    - xform/^(.)(āng|ang|én|ià|ǐn|iú|uē|ue|üē|üe)$/$1Y/
+    - xform/^(.)(àng|āo|ao|iàn|ế|m̄|m|ǹg)$/$1U/
+    - xform/^(.)(ù|uán|ué|üán|üé|ê̌|m̀|ńg)$/$1I/
     - xform/^(.)(ān|an|éng|èr|iā|ia|iáo|iū|iu|uài|uè|üè)$/$1O/
-    - xform/^(.)(ǎng|ěr|iào|iè|uǒ|m̄|ḿ|m̌|m̀|m)$/$1P/
+    - xform/^(.)(ǎng|ěr|iào|iè|uǒ)$/$1P/
     - xform/^(.)(á|āi|ai|ēr|er|iǎ|ìng|óng|uāng|uang)$/$1A/
     - xform/^(.)(àn|ín|iōng|iong|ūn|un|uō|uó|uo|ǚ|ǖn|ün)$/$1S/
-    - xform/^(.)(é|ế|èi|iá|iāo|iao|ǒu)$/$1D/
+    - xform/^(.)(é|èi|iá|iāo|iao|ǒu)$/$1D/
     - xform/^(.)(ǐ|ò|uǎ|uà|uān|uan|üān|üan|r)$/$1F/
-    - xform/^(.)(ěi|ěn|ī|i|uáng)$/$1G/
+    - xform/^(.)(ěi|ěn|ī|i|uáng|ňg)$/$1G/
     - xform/^(.)(éi|ēng|eng|iē|ie|uāi|uai|ún|ǜ|ǘn)$/$1H/
     - xform/^(.)(ái|ér|īng|ing|ǒ|ū|u|uǎi)$/$1J/
-    - xform/^(.)(ē|e|ê̄|ê|ié|íng|òu)$/$1K/
-    - xform/^(.)(ì|uī|ui|n̄g|ńg|ňg|ǹg|ng)$/$1L/
+    - xform/^(.)(ē|e|ié|íng|òu|ǹ)$/$1K/
+    - xform/^(.)(ì|uī|ui|ê̄|ê|h̀|ḿ|ń)$/$1L/
     - xform/^(.)(áng|iǎo|iǔ|òng|uā|ua|uǐ)$/$1Z/
     - xform/^(.)(ēi|ei|iān|ian|ōu|ou|ùn|uò|ǜn)$/$1X/
-    - xform/^(.)(ǔ|uàn|üàn)$/$1C/
+    - xform/^(.)(ǔ|uàn|üàn|ề|ȟ|n̄|n|n̄g|ng)$/$1C/
     - xform/^(.)(ǎ|īn|in|ióng|iǒng|ōng|ong|uái)$/$1V/
     - xform/^(.)(ài|ián|uǎn|uàng|uě|uí|ǘ|üǎn|üě)$/$1B/
-    - xform/^(.)(ǎn|í|iǎng)$/$1N/
-    - xform/^(.)(ěng|iāng|iang|ú|ǔn|ǚn|h̄|h́|ȟ|h̀|h)$/$1M/
+    - xform/^(.)(ǎn|í|iǎng|h́|m̌)$/$1N/
+    - xform/^(.)(ěng|iāng|iang|ú|ǔn|ǚn|h̄|h)$/$1M/
     # Code converter
     - xlit/QWERTYUIOPASDFGHJKLZXCVBNM/qwertyuiopasdfghjklzxcvbnm/
 
